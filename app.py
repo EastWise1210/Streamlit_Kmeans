@@ -107,11 +107,8 @@ def main():
                     X['Group'] = y_pred
                     st.info(f'아래는 사용자께서 선택하신 k = {user_sel_kval}값의 개수로 클러스터링한 전체 결과입니다.')
                     st.dataframe(X)
-                    sel_num = st.number_input(f'선택하신 k = {user_sel_kval} 범위 안에서 구성된 그룹 번호를 선택하시면 해당 그룹의 데이터를 하단에 보여드립니다.', min_value=0, max_value=user_sel_kval, value=0)
-                    if sel_num != 0 :
-                        st.dataframe(X[X['Group'] == sel_num])
-                    else:
-                        pass
+                    sel_num = st.number_input(f'선택하신 k = {user_sel_kval} 범위 안에서 구성된 그룹 번호를 선택하시면 해당 그룹의 데이터를 하단에 보여드립니다.', min_value=0, max_value=user_sel_kval-1, value=0)
+                    st.dataframe(X[X['Group'] == sel_num])
 
 
                     #10. 결과를 파일로 저장
