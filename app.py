@@ -4,6 +4,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.cluster import KMeans
 
+import time
+from progress import run_progress
+
 
 def main():
     st.title('K-Means 군집화 앱')
@@ -26,7 +29,7 @@ def main():
         df_isna = user_df.isna().sum()
         st.text('업로드 하신 데이터의 결측값(NaN) 존재 여부입니다.')
         st.dataframe(df_isna)
-        st.info('결측값이 존재하면 해당 데이터는 삭제합니다.')
+        st.warning('결측값이 존재하면 해당 데이터는 삭제합니다.')
         #1-3. 결측값 데이터 삭제
         user_df.dropna(inplace=True)
         #1-4. 인덱스 리셋&삭제
@@ -55,7 +58,7 @@ def main():
                     pass
 
             if object_col_list != []:   #인코딩 필요한 컬럼 존재시 안내메세지
-                st.info(f'원활한 클러스터링을 위해, {object_col_list} 컬럼은 인코딩 작업이 자동 수행됩니다.')
+                st.warning(f'원활한 클러스터링을 위해, {object_col_list} 컬럼은 인코딩 작업이 자동 수행됩니다.')
 
                 #4-2. 필요한 Encoder 종류 파악
                 label_encoder = LabelEncoder()
@@ -72,6 +75,7 @@ def main():
 
 
             #5. WCSS 계산
+            run_progress()
             wcss = []
             for i in range(1, 11):
                 kmeans = KMeans(n_clusters=i, random_state=10)
