@@ -105,7 +105,7 @@ def main():
 
                 #10. 결과를 파일로 저장
                 import joblib
-                X.to_csv('Result_Dataframe')
+                X.to_csv('Result_Dataframe.csv')
                 joblib.dump(kmeans, 'user_KMeans.pkl')
                 st.info('아래 버튼을 누르시면 작업 결과물을 파일로 다운로드하실 수 있습니다.')
                 df_down_button = st.download_button(label='데이터프레임 다운로드', data='./Result_Dataframe', file_name='Result Dataframe.csv')
