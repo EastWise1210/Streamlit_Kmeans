@@ -53,41 +53,66 @@ def main():
                     object_col_list.append(check_type.index[i])
                 else:
                     pass
+
             if object_col_list != []:   #인코딩 필요한 컬럼 존재시 안내메세지
                 st.info(f'원활한 클러스터링을 위해, {object_col_list} 컬럼은 인코딩 작업이 자동 수행됩니다.')
+
                 #4-2. 필요한 Encoder 종류 파악
                 label_encoder = LabelEncoder()
-                one_hot_encoder = OneHotEncoder()
-                for z in range(len(object_col_list)):
-                    nunique = object_col_list[z].nunique()
+                for z in object_col_list:   #타입이 object인 컬럼 중에서 nunique 개수에 따라 Label / OneHot 구분
+                    nunique = X[f'{z}'].nunique()
                     if nunique >= 3 :
-                        ct = ColumnTransformer([('encoder', OneHotEncoder(), object_col_list[z])], remainder='passthrough')
-                        object_col_list[z] = ct.fit_transform(object_col_list[z])
-                        user_df[sel_list][f'{z}'] = one_hot_encoder.transform(user_df[sel_list][f'{z}'])
+                        ct = ColumnTransformer([('encoder', OneHotEncoder(), X[f'{z}'])], remainder='passthrough')
+                        X = ct.fit_transform(X)
                     else:
-                        user_df[sel_list][f'{z}'] = label_encoder.transform(user_df[sel_list][f'{z}'])
+                        label_encoder.fit(X[f'{z}'])
+                        X[f'{z}'] = label_encoder.transform(X[f'{z}'])
             else:
                 pass
 
 
-
-
             #5. WCSS 계산
+            wcss = []
+            for i in range(1, 11):
+                kmeans = KMeans(n_clusters=i, random_state=10)
+                kmeans.fit(X)
+                wcss.append(kmeans.inertia_)
+            #inertia_가 wcss값임  ->  wcss 값을 비교함으로 최적값 찾기
 
 
             #6. Elbow method 이용하여 차트로 표현
+            st.line_chart(wcss)
+            st.info('위 그래프는 최적의 k값을 찾기 위해 WCSS를 구한 결과입니다. 그래프를 참고하여 다음 입력란에 사용자 임의의 K값을 입력해주십시오.')
+            user_sel_kval = st.number_input(label='값을 선택해주십시오.', min_value=0, max_value=10, value=0)
 
 
             #7. 유저 임의의 k 개수 결정
+            if user_sel_kval != 0:
+                kmeans = KMeans(n_clusters=user_sel_kval, random_state=1)
+
+                #8. KMeans 수행해서 그룹정보 가져오기
+                y_pred = kmeans.fit_predict(X)
+                
+                #9. 본 데이터프레임에 그룹정보 컬럼 추가
+                X['Group'] = y_pred
+                st.dataframe(X)
+                st.info(f'사용자께서 선택하신 k = {user_sel_kval}값의 개수로 클러스터링 하였습니다.')
 
 
-            #8. KMeans 수행해서 그룹정보 가져오기
+                #10. 결과를 파일로 저장
+                import joblib
+                X.to_csv('Result_Dataframe')
+                joblib.dump(kmeans, 'user_KMeans.pkl')
+                st.info('아래 버튼을 누르시면 작업 결과물을 파일로 다운로드하실 수 있습니다.')
+                df_down_button = st.download_button(label='데이터프레임 다운로드', data='./Result_Dataframe', file_name='Result Dataframe.csv')
+                ml_down_button = st.download_button(label='머신러닝 모델 다운로드', data='./user_KMeans', file_name='user_KMeans.pkl')
 
 
-            #9. 본 데이터프레임에 그룹정보 컬럼 추가
+            else:
+                st.info('k 개수를 선택하시면 클러스터링 작업을 수행하여 결과를 출력합니다.')
 
 
-            #10. 결과를 파일로 저장
+
         else:
             st.info('2개 이상의 컬럼을 선택하여야 클러스터링이 가능합니다')
 
@@ -97,7 +122,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
