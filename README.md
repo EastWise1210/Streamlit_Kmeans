@@ -97,7 +97,7 @@
 
 
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer&text=Thanks%20for%20Reading&fontSize=50)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer&text=Thanks%20for%20Reading&fontSize=50&fontAlign=60&animation=twinkling)
 
 <!--파이썬 아이콘-->
 ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
