@@ -70,18 +70,24 @@
     <li>[주요 라이브러리] : numpy, pandas, matplotlib, seaborn, scikit-learn, joblib, ipython, pillow, jupyter</li>
     <li>[버전 관리] : Github Desktop를 이용하여 원격 레포지토리에서 로컬로 clone한 뒤 작업시 commit & push</li>
     <li>[서버 관리] : AWS EC2 클라우드 컴퓨팅 서비스 이용하여 인스턴스 생성 후 PuTTY로 원격접속하여 개발 환경과 동일한 가상 환경으로 관리</li>
-    <li>[서비스 방법] : Github 원격 레포지토리에서 작업 파일을 EC2 서버에 pull하여 업로드하고 백그라운드 실행 설정 및 포트 지정하여 하나의 서버에서 여러 대시보드 가동하도록 설정</li>
+    <li>[서비스 방법] : Github 원격 레포지토리에서 작업 파일을 EC2 서버에 pull하여 업로드하고 백그라운드 실행 설정 및 개별 포트 지정하여 하나의 서버에서 여러 대시보드 가동하도록 설정</li>
   </ol>
 <br>
 <!--목차 5. 개발이슈 표기-->
     <h3>5. 개발 이슈</h3>
   <ol start="1" type="a">
-    <li>사용자가 업로드한 csv 파일의 데이터 개수(데이터프레임의 행의 개수)가, wcss 계산에 사용될 k값보다 적을 경우 오류 발생<br>
-        (sol) : 유저가 업로드한 DataFrame의 Shape를 검사하고 조건문을 설정하여, 데이터의 수가 k값보다 적을 경우 return 처리하고 경고 메세지 표시 </li>
-    <li>사용자가 업로드한 자료에 결측값(NaN 등)이 존재할 경우 데이터 분석시 오류 발생<br>
-        (sol) : isna() 메소드를 이용하여 결측값 존재 여부를 파악한 뒤 해당하는 데이터는 자동으로 삭제하도록 처리</li>
-    <li>사용자가 업로드한 자료에 문자열로 이루어진 카테고리컬 데이터 컬럼이 있을 경우 데이터 분석에 오류 발생<br>
-        (sol) : scikit-learn의 Encoder, ColumnTransformer를 활용하여 숫자 데이터로 변환하도록 처리</li>
+    <li>사용자가 업로드한 csv 파일의 데이터 개수(데이터프레임의 행의 개수)가, wcss 계산에 사용될 k값보다 적을 경우 오류 발생</li>
+      <ul>
+        <li>sol : 유저가 업로드한 DataFrame의 Shape를 검사하고 조건문을 설정하여, 데이터의 수가 k값보다 적을 경우 return 처리하고 경고 메세지 표시</li>
+      </ul>
+    <li>사용자가 업로드한 자료에 결측값(NaN 등)이 존재할 경우 데이터 분석시 오류 발생</li>
+      <ul>
+        <li>sol : isna() 메소드를 이용하여 결측값 존재 여부를 파악한 뒤 해당하는 데이터는 자동으로 삭제하도록 처리</li>
+      </ul>
+    <li>사용자가 업로드한 자료에 문자열로 이루어진 카테고리컬 데이터 컬럼이 있을 경우 데이터 분석에 오류 발생</li>
+      <ul>
+        <li>sol : scikit-learn의 Encoder, ColumnTransformer를 활용하여 숫자 데이터로 변환하도록 처리</li>
+      </ul>
   </ol>
 <br>
 <!--목차 6. 개발 및 서비스 한계-->
@@ -105,8 +111,9 @@
 <!--주피터노트북 아이콘-->
 ![JupyterNotebook](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)
 
-<!---->
+<!--아마존 AWS 아이콘-->
 ![](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 <!--비주얼 스튜디오 코드 아이콘-->
 ![VSC](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+
