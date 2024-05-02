@@ -1,6 +1,6 @@
 
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=머신러닝%20웹%20대시보드&fontSize=60&fontAlignY=60&animation=twinkling)
+![header](https://capsule-render.vercel.app/api?type=Venom&color=gradient&height=200&section=header&text=머신러닝%20웹%20대시보드&fontSize=60&fontAlignY=60&animation=twinkling)
 
 <!DOCTYPE html>
 <html lang="en">
