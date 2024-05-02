@@ -1,6 +1,6 @@
 
 
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=200&section=header&text=ML%20Web%20Dashboard(3)&fontSize=60)
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=ML%20Web%20Dashboard(3)&fontSize=60)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h2>ML 웹 대시보드(3)</h2>
     <h5>머신 러닝(Machine Learning) 기법 중 군집화[Clustering]에 해당하는 K-Means 모델을 적용한 웹 대시보드 프로젝트입니다.</h5>
     <h5>사용자가 업로드한 csv 파일 데이터에 대해 임의의 k값에 따라 그룹화를 진행하여 결과를 표시하는 서비스를 제공합니다.</h5>
 <br>
@@ -98,7 +97,7 @@
 
 
 
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=200&section=footer&text=ML%20Web%20Dashboard(3)&fontSize=60)
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer&text=Thanks%20for%20Reading&fontSize=50)
 
 <!--파이썬 아이콘-->
 ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
