@@ -78,15 +78,15 @@
   <ol start="1" type="a">
     <li>사용자가 업로드한 csv 파일의 데이터 개수(데이터프레임의 행의 개수)가, wcss 계산에 사용될 k값보다 적을 경우 오류 발생</li>
       <ul>
-        <li>sol : 유저가 업로드한 DataFrame의 Shape를 검사하고 조건문을 설정하여, 데이터의 수가 k값보다 적을 경우 return 처리하고 경고 메세지 표시</li>
+        <li>[Sol] 유저가 업로드한 DataFrame의 Shape를 검사하고 조건문을 설정하여, 데이터의 수가 k값보다 적을 경우 return 처리하고 경고 메세지 표시</li>
       </ul>
     <li>사용자가 업로드한 자료에 결측값(NaN 등)이 존재할 경우 데이터 분석시 오류 발생</li>
       <ul>
-        <li>sol : isna() 메소드를 이용하여 결측값 존재 여부를 파악한 뒤 해당하는 데이터는 자동으로 삭제하도록 처리</li>
+        <li>[Sol] isna() 메소드를 이용하여 결측값 존재 여부를 파악한 뒤 해당하는 데이터는 자동으로 삭제하도록 처리</li>
       </ul>
     <li>사용자가 업로드한 자료에 문자열로 이루어진 카테고리컬 데이터 컬럼이 있을 경우 데이터 분석에 오류 발생</li>
       <ul>
-        <li>sol : scikit-learn의 Encoder, ColumnTransformer를 활용하여 숫자 데이터로 변환하도록 처리</li>
+        <li>[Sol] scikit-learn의 Encoder, ColumnTransformer를 활용하여 숫자 데이터로 변환하도록 처리</li>
       </ul>
   </ol>
 <br>
