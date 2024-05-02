@@ -1,10 +1,6 @@
 # Streamlit_Kmeans
 
 
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=eEastWise1210](https://github.com/anuraghazra/github-readme-stats)
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +11,8 @@
 
 
 <body>
-    <h2 style='text-align:center;'>웹 대시보드</h2>
-    <h6>머신 러닝(Machine Learning) 기법 중 군집화[Clustering]에 해당하는 K-Means 모델을 적용한 웹 대시보드 미니 프로젝트입니다.</h6>
+    <h2>웹 대시보드</h2>
+    <h5>머신 러닝(Machine Learning) 기법 중 군집화[Clustering]에 해당하는 K-Means 모델을 적용한 웹 대시보드 미니 프로젝트입니다.</h5>
 <br>
 <!--목차 1. 개발환경 표기-->
     <h3>1. 개발 환경</h3>
