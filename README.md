@@ -20,7 +20,7 @@
 <br>
 <!--목차 1. 개발환경 표기-->
     <h3>1. 개발 환경</h3>
-  <ol, start='1', type='a'>
+  <ol, start="1", type="a">
     <li>(1)Anaconde를 사용하여 Python 3.10 버전의 가상환경 구축</li>
     <li>(2)코드 에디터 : Visual Studio Code, Jupyter Notebook 활용</li>
     <li>(3)프레임워크 : Streamlit 사용</li>
@@ -32,13 +32,13 @@
 <br>
 <!--목차 2. 개발 목적 표기-->
     <h3>2. 개발 목적</h3>
-  <ol, start='1', type='a'>
+  <ol, start="1", type="a">
     <li>머신 러닝(Machine-Learning) 기법 중 군집화[Clustering]에 해당하는 K-Means 모델을 적용하여, 사용자가 입력한 CSV(Comma Seperated Value)파일 자료의 데이터들을 그룹화하는 기능을 구현해서, 해당 자료[data]에 대한 의사결정에 도움이 되는 정보[information] 제공을 목적으로 하였습니다.</li>
   </ol,>
 <br>
 <!--목차 3. 개발 이슈-->
     <h3>3. 개발 이슈</h3>
-  <ol, start='1', type='a'>
+  <ol, start="1", type="a">
     <li>사용자가 업로드한 csv 파일의 데이터 개수(데이터프레임의 행의 개수)가, wcss 계산에 사용될 k값보다 적을 경우 오류 발생<br>
         (sol) : 유저가 업로드한 DataFrame의 Shape를 검사하고 조건문을 설정하여, 데이터의 수가 k값보다 적을 경우 return 처리하고 경고 메세지 표시 </li>
     <li>사용자가 업로드한 자료에 결측값(NaN 등)이 존재할 경우 데이터 분석시 오류 발생<br>
@@ -49,7 +49,7 @@
 <br>
 <!--목차 4. 개발 및 서비스 한계-->
     <h3>4. 개발 및 서비스 한계</h3>
-  <ol, start='1', type='a'>
+  <ol, start="1", type="a">
     <li>본 서비스에 업로드한 CSV 파일의 데이터프레임에서 카테고리컬 컬럼의 unique(고윳값)의 개수가 많은 경우, Encoding 후 해당 컬럼의 개수가 과도하게 많아져 EC2 FreeTier 등급의 리소스로는 하드웨어적으로 처리가 불가능함. 때문에 본 서비스에서는 카테고리컬 컬럼의 nunique 값이 4~5 이상인 경우 리소스 제한 문제로 인하여 서비스 제공이 원활하지 않음.</li>
   </ol,>
 </body>
