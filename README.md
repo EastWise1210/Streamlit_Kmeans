@@ -1,6 +1,3 @@
-# Streamlit_Kmeans
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
