@@ -15,21 +15,19 @@
 
 
 <body>
-<div style='text-align:center;'>
-    <h2>웹 대시보드</h2>
+    <h2 style='text-align:center;'>웹 대시보드</h2>
     <h6>머신 러닝(Machine Learning) 기법 중 군집화[Clustering]에 해당하는 K-Means 모델을 적용한 웹 대시보드 미니 프로젝트입니다.</h6>
-</div>
 <br>
 <!--목차 1. 개발환경 표기-->
     <h3>1. 개발 환경</h3>
   <ol start="1" type="a">
-    <li>Anaconde를 사용하여 Python 3.10 버전의 가상환경 구축</li>
-    <li>코드 에디터 : Visual Studio Code, Jupyter Notebook 활용</li>
-    <li>프레임워크 : Streamlit 사용</li>
-    <li>주요 라이브러리 : Numpy, Pandas, Scikit-Learn, joblib 이용</li>
-    <li>버전 관리 : Git Desktop 소프트웨어를 이용하여 Github 원격 레포지토리에서 로컬로 clone한 후 매 작업시 commit & push하여 관리</li>
-    <li>서버 관리 : AWS(Amazon Web Service) EC2 클라우드 컴퓨팅 서비스 FreeTier 등급을 이용한 인스턴스 리소스를 할당받고 PuTTY로 원격 접속하여 개발 환경과 동일한 가상 환경(Python=3.10, 주요 라이브러리 install) 구축 및 관리</li>
-    <li>서비스 방법 : 본 작업 파일을 (6)에서 서술한 EC2 리소스에 업로드하여 서버에서 원격접속 터미널 종료 후에도 동작 가능토록 백그라운드 실행 설정 및 포트 지정하여 하나의 서버에서 여러 대시보드 가동하도록 설정</li>
+    <li>[가상환경] : Anaconde를 사용하여 Python 3.10 버전의 가상환경 구축</li>
+    <li>[코드 에디터] : Visual Studio Code, Jupyter Notebook 활용</li>
+    <li>[프레임워크] : Streamlit 사용</li>
+    <li>[주요 라이브러리] : Numpy, Pandas, Scikit-Learn, joblib 이용</li>
+    <li>[버전 관리] : Git Desktop 소프트웨어를 이용하여 Github 원격 레포지토리에서 로컬로 clone한 후 매 작업시 commit & push하여 관리</li>
+    <li>[서버 관리] : AWS(Amazon Web Service) EC2 클라우드 컴퓨팅 서비스 FreeTier 등급을 이용한 인스턴스 리소스를 할당받고 PuTTY로 원격 접속하여 개발 환경과 동일한 가상 환경(Python=3.10, 주요 라이브러리 install) 구축 및 관리</li>
+    <li>[서비스 방법] : 본 작업 파일을 (6)에서 서술한 EC2 리소스에 업로드하여 서버에서 원격접속 터미널 종료 후에도 동작 가능토록 백그라운드 실행 설정 및 포트 지정하여 하나의 서버에서 여러 대시보드 가동하도록 설정</li>
   </ol>
 <br>
 <!--목차 2. 개발 목적 표기-->
