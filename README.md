@@ -1,6 +1,6 @@
 
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=ML%20Web%20Dashboard(3)&fontSize=60)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=머신러닝%20웹%20대시보드&fontSize=60&fontAlignY=60&animation=twinkling)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +97,7 @@
 
 
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer&text=Thanks%20for%20Reading&fontSize=50&fontAlign=60&animation=twinkling)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer&text=Thanks%20for%20Reading&fontSize=50)
 
 <!--파이썬 아이콘-->
 ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
