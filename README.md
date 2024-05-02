@@ -1,11 +1,13 @@
+
+
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=ML%20Web%20Dashboard(3)&fontSize=90)
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
-
 <body>
     <h2>ML 웹 대시보드(3)</h2>
     <h5>머신 러닝(Machine Learning) 기법 중 군집화[Clustering]에 해당하는 K-Means 모델을 적용한 웹 대시보드 프로젝트입니다.</h5>
@@ -89,6 +91,8 @@
     <li>CSV 파일의 데이터 중 범주형(categorical) 컬럼의 고윳값(unique) 개수가 많은 경우, Encoding 작업시 컬럼의 개수가 과도하게 많아져 FreeTier 등급의 성능으로는 처리가 불가능함. 때문에 본 서비스에서는 카테고리컬 컬럼의 nunique 값이 약 4~5 이상인 경우 리소스 제한 문제로 인하여 서비스 제공이 원활하지 않음.<br>
     (sol) : 데이터 개수(행의 개수)에 대한 해당 컬럼의 nunique 값의 비율이 60% 이상이면 클러스터링 작업이 무의미해지므로, 이와 같은 케이스는 제외하도록 조건문으로 처리</li>
   </ol>
+  <br>
+  <br>
 </body>
 </html>
 
