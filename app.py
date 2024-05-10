@@ -7,6 +7,13 @@ from sklearn.cluster import KMeans
 import time
 from progress import run_progress
 
+import platform
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+plt.rcParams['axes.unicode_minus'] = False
+if platform.system() == 'Linux':
+    rc('font', family='NanumGothic')
+
 
 def main():
     st.title('K-Means 군집화 앱')
@@ -91,7 +98,14 @@ def main():
 
 
                 #6. Elbow method 이용하여 차트로 표현
-                st.line_chart(wcss)
+                fig1 = plt.figure()
+                plt.plot(X, wcss)
+                plt.title('엘보우 메소드 그래프')
+                plt.xlabel('클러스터 개수')
+                plt.ylabel('WCSS 값')
+                st.pyplot(fig1)
+
+                #st.line_chart(wcss)
                 st.info('위 그래프는 최적의 k값을 찾기 위해 WCSS를 구한 결과입니다. 그래프를 참고하여 다음 입력란에 사용자 임의의 K값을 입력해주십시오.')
                 user_sel_kval = st.number_input(label='값을 선택해주십시오.', min_value=0, max_value=10, value=0)
 
